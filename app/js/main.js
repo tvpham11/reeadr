@@ -48,8 +48,17 @@
       .when('/add', {
         controller: 'Book',
         templateUrl: 'js/book/add.tpl.html'
+      })
+      // User registration
+      .when('/register', {
+        controller: 'User',
+        templateUrl: 'js/user/register.tpl.html'
+      })
+      // User log-in
+      .when('/login', {
+        controller: 'User',
+        templateUrl: 'js/user/login.tpl.html'
       });
-
     }
 
   ]);
