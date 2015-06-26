@@ -1,0 +1,15 @@
+<h2>I'm currently reading:</h2>
+
+<ul>
+  <li ng-repeat="book in bookList">
+    <a href="#/book/{{ book.objectId }}">
+      {{ book.title }} {{ book.author }} {{ book.isbn }}
+    </a>
+    <span ng-click="deleteMe(book)">x</span>
+  </li>
+</ul>
+
+<a href="#/toread"><h2>I want to read...</h2></a>
+
+<a href="#/alreadyread"><h2>I have already read...</h2></a>
+

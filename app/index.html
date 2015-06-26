@@ -12,14 +12,10 @@
 
   <nav ng-controller="NavCtrl">
     <a href="#/">Home</a>
-    <a href="#/addedit">Add/Edit</a>
-    <a href="#/about">About</a>
+    <a href="#/add_edit">Add/Edit</a>
   </nav>
 
-  <!-- var vm = new Bookslist -->
-  <div class="container" ng-controller="BooksList as vm">
-    <h1>{{ vm.pageName }}</h1>
-  </div>
+  <div class="container" ng-view></div>
 
   <!-- VENDOR -->
   <script src="js/vendor/jquery.js"></script>
@@ -29,6 +25,13 @@
 
   <!-- MAIN -->
   <script src="js/main.js"></script>
+
+  <!-- ANGULAR FILES -->
+  <script src="js/book/nav.controller.js"></script>
+  <script src="js/book/book.service.js"></script>
+  <script src="js/book/booklist.controller.js"></script>
+  <script src="js/book/booksingle.controller.js"></script>
+  <script src="js/book/book.controller.js"></script>
 
 </body>
 </html>
