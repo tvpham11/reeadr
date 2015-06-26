@@ -1,6 +1,6 @@
 ## Welcome to My Angular Project
 
-> I am your Readme.md file, you should probably update me.
+> This is an app similar to Goodreads. I used 'delete' and 'edit' icons from Font Awesome.
 
 
 ## Usage
