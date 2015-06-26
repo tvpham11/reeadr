@@ -4,8 +4,9 @@
 
   angular.module('Reeadr')
 
-  .controller('BookList', ['$scope', 'ReeadrService',
-    function($scope, ReeadrService) {
+  .controller('BookList', ['$scope', '$location', 'ReeadrService',
+
+    function($scope, $location, ReeadrService) {
 
       // Call method to retrieve all books
       ReeadrService.getBooks().success(function (data) {
@@ -19,12 +20,6 @@
         });
       };
 
-      // Look at how to re-route to edit details !!!!!!!!!!!
-      $scope.editMe = function(indivBook) {
-        ReeadrService.editBook(indivBook).success(function() {
-          $scope.bookList = _.without($scope.bookList, indivBook);
-        });
-      };
     }
 
   ]);

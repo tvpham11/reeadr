@@ -4,16 +4,21 @@
 
   angular.module('Reeadr')
 
-  .controller('BookSingle', ['$scope', 'ReeadrService', '$routeParams', '$rootScope',
+  .controller('BookSingle', ['$scope', 'ReeadrService', '$routeParams', '$location',
 
-    function($scope, ReeadrService, $routeParams, $rootScope) {
-      $rootScope.$broadcast('PageChange', 'Single Book Page');
+    function($scope, ReeadrService, $routeParams, $location) {
 
-      console.log($routeParams);
       var id = $routeParams.id;
       ReeadrService.getBook(id).success(function(data) {
         $scope.book = data;
       });
+
+      // Edit book
+      $scope.editMe = function(indivBook) {
+        ReeadrService.editBook(indivBook).success(function() {
+          $location.path('/');
+        });
+      };
     }
 
   ]);

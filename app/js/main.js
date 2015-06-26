@@ -37,10 +37,17 @@
         controller: 'BookSingle',
         templateUrl: 'js/book/bookinfo.tpl.html'
       })
-      // Adit/Edit book info page
-      .when('/add_edit', {
+
+      // Edit book info page
+      .when('/edit/:id', {
+        controller: 'BookSingle',
+        templateUrl: 'js/book/edit.tpl.html'
+      })
+
+      // Add book info page
+      .when('/add', {
         controller: 'Book',
-        templateUrl: 'js/book/add_edit.tpl.html'
+        templateUrl: 'js/book/add.tpl.html'
       });
 
     }

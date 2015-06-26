@@ -3,9 +3,9 @@
   'use strict';
   angular.module('Reeadr')
 
-  .service('ReeadrService', ['$http', 'PARSE', '$rootScope',
+  .service('ReeadrService', ['$http', 'PARSE',
 
-    function ($http, PARSE, $rootScope) {
+    function ($http, PARSE) {
 
       var endpoint = PARSE.URL + 'classes/Book/';
 
