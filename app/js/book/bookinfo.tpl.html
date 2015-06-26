@@ -1,4 +1,6 @@
-<h2>{{ book.readstatus }}</h2>
+<h2 ng-if="book.readstatus === 'toRead'">I want to read:</h2>
+<h2 ng-if="book.readstatus === 'currentlyReading'">I'm currently reading:</h2>
+<h2 ng-if="book.readstatus === 'alreadyRead'">I have already read:</h2>
 
 <div>
   <a href="http://covers.openlibrary.org/b/isbn/{{ book.isbn }}-M.jpg"><img src="http://covers.openlibrary.org/b/isbn/{{ book.isbn }}-M.jpg"></a>

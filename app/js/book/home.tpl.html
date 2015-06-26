@@ -1,11 +1,12 @@
 <h2>I'm currently reading:</h2>
 
 <ul>
-  <li ng-repeat="book in bookList">
+  <li ng-if="book.readstatus === 'currentlyReading'" ng-repeat="book in bookList">
     <a href="#/book/{{ book.objectId }}">
-      {{ book.title }} {{ book.author }} {{ book.isbn }}
+      {{ book.title }} by {{ book.author }}
     </a>
-    <span ng-click="deleteMe(book)">x</span>
+    <a role="button" class="button" ng-click="deleteMe(book)">Delete</a>
+    <a role="button" class="button" ng-click="editMe(book)">Edit</a>
   </li>
 </ul>
 

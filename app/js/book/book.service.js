@@ -24,9 +24,7 @@
 
       // Get an array of all books
       this.getBooks = function() {
-        $http.get(endpoint, PARSE.CONFIG).success(function(data) {
-          $rootScope.$broadcast('AllBooksRetrieved', data);
-        });
+        return $http.get(endpoint, PARSE.CONFIG);
       };
 
       // Delete a single book
@@ -38,10 +36,14 @@
       // Add a new book
       this.addBook = function(newBook) {
         var book = new Book(newBook);
-
-        // Submit book
         return $http.post(endpoint, book, PARSE.CONFIG);
       };
+
+      // Edit a single book
+      this.editBook = function(indivBook) {
+        var editURL = endpoint + indivBook.objectId;
+        return $http.put(editURL, indivBook, PARSE.CONFIG);
+      }
 
     }
 
